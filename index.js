@@ -35,6 +35,7 @@ app.get(`/files/:filename`, (req, res) => {
 });
 
 
+
 app.get(`/edit/:filename`, (req, res) => {
     
         res.render('edit.ejs',{ filename: req.params.filename });
@@ -54,7 +55,6 @@ app.get(`/delete/:filename`, (req, res) => {
     
     res.render('delete.ejs',{ filename: req.params.filename });
 });
-
 app.post(`/delete`, (req, res) => {
     // console.log(req.body);//this will give the data from the form
     fs.unlink(`./files/${req.body.fileToDelete}`,  (err) => {
